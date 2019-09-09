@@ -2,7 +2,8 @@
   font-family: Arial, Helvetica, sans-serif;
   padding: 0;
   margin: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  scroll-behavior: smooth; }
 
 #burger {
   position: fixed;
@@ -22,6 +23,14 @@
   display: none; }
   #checkbox:checked ~ #menu {
     left: 0; }
+  #checkbox:checked ~ #burger div {
+    transition: .2s; }
+    #checkbox:checked ~ #burger div:first-child {
+      transform: translateY(14px) rotate(45deg); }
+    #checkbox:checked ~ #burger div:last-child {
+      transform: translateY(-14px) rotate(-45deg); }
+    #checkbox:checked ~ #burger div:nth-child(2) {
+      transform: translateX(100vw); }
 
 #menu {
   position: fixed;

@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 #burger {
@@ -28,6 +29,18 @@
     &:checked~#menu {
         left: 0;
     }
+    &:checked~#burger div {
+        transition:.2s;
+        &:first-child {
+            transform: translateY(14px) rotate(45deg);
+        }
+        &:last-child {
+            transform: translateY(-14px) rotate(-45deg);
+        }
+        &:nth-child(2){
+            transform: translateX(100vw);
+        }
+    }
 }
 
 #menu {
@@ -47,7 +60,7 @@
         text-decoration: none;
 
         &:active {
-            color:black;
+            color: black;
         }
     }
 }
